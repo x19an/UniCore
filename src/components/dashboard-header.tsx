@@ -44,18 +44,26 @@ export function DashboardHeader() {
 
   return (
     <header className="flex h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] shrink-0 items-center gap-2 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
-      <SidebarTrigger className="-ml-1" />
-      <Separator orientation="vertical" className="h-6 mx-2" />
-      <Breadcrumb>
+      <div className="hidden md:block">
+        <SidebarTrigger className="-ml-1" />
+      </div>
+      <Separator orientation="vertical" className="h-6 mx-2 hidden md:block" />
+      
+      {/* Mobile Title Centered */}
+      <div className="md:hidden flex items-center justify-center w-full absolute left-0 right-0 pointer-events-none">
+        <span className="font-bold text-lg tracking-tight">UniCore</span>
+      </div>
+
+      <Breadcrumb className="hidden md:flex">
         <BreadcrumbList>
-          <BreadcrumbItem className="hidden md:block">
+          <BreadcrumbItem>
             <BreadcrumbLink render={<Link href="/" />}>
               UniCore
             </BreadcrumbLink>
           </BreadcrumbItem>
           {!isHome && (
             <>
-              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage>{currentPageTitle}</BreadcrumbPage>
               </BreadcrumbItem>
@@ -63,7 +71,7 @@ export function DashboardHeader() {
           )}
           {isHome && (
             <>
-              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage>Dashboard</BreadcrumbPage>
               </BreadcrumbItem>

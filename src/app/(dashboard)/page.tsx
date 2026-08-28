@@ -9,6 +9,7 @@ import { Clock, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { isToday, isBefore, startOfDay } from "date-fns";
 
 import { useGlobalStore } from "@/lib/global-store";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { todos, activities, courses, sessions } = useGlobalStore();
@@ -64,9 +65,20 @@ export default function Home() {
       {!mounted ? (
         <div className="min-h-[200px]" />
       ) : (
-      <div className="grid gap-6 lg:grid-cols-3">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ staggerChildren: 0.1 }}
+        className="grid gap-4 md:gap-6 lg:grid-cols-3"
+      >
         {/* Today's Priorities */}
-        <Card className="col-span-1 border-border/50 bg-card flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          className="col-span-1"
+        >
+        <Card className="border-border/50 bg-card h-full flex flex-col shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -96,9 +108,16 @@ export default function Home() {
             )}
           </CardContent>
         </Card>
+        </motion.div>
 
         {/* Active Trackers */}
-        <Card className="col-span-1 border-border/50 bg-card flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          className="col-span-1"
+        >
+        <Card className="border-border/50 bg-card h-full flex flex-col shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" />
@@ -118,9 +137,16 @@ export default function Home() {
             ))}
           </CardContent>
         </Card>
+        </motion.div>
 
         {/* Attendance Risk */}
-        <Card className="col-span-1 border-border/50 bg-card flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 24 }}
+          className="col-span-1"
+        >
+        <Card className="border-border/50 bg-card h-full flex flex-col shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-destructive" />
@@ -151,7 +177,8 @@ export default function Home() {
             )}
           </CardContent>
         </Card>
-      </div>
+        </motion.div>
+      </motion.div>
       )}
     </div>
   );
