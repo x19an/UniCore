@@ -1,18 +1,22 @@
 <div align="center">
   <br />
-    <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/icons/icon-512x512.png" alt="UniCore Logo" width="120" />
+    <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/hexagon.svg" alt="UniCore Logo" width="100" />
   <br />
   
   <h1>UniCore</h1>
   <p>
-    <strong>Your sleek AI-powered future assistant & university productivity hub.</strong>
+    <strong>Your sleek, all-in-one university productivity hub.</strong>
   </p>
 
   <p>
-    <img src="https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js" alt="Next.js" />
-    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+    <a href="https://unicore.vercel.app"><img src="https://img.shields.io/badge/Live_App-Visit_Now-000000?style=for-the-badge&logo=vercel" alt="Live App" /></a>
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js" alt="Next.js" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
   </p>
 </div>
 
@@ -20,27 +24,19 @@
 
 ## ✦ What is UniCore?
 
-**UniCore** is a modern, mobile-responsive, all-in-one productivity engine designed specifically for university students. Built with cutting-edge web technologies, it consolidates everything a student needs to stay on top of their academic life into one sleek dashboard.
+**UniCore** is a modern, mobile-responsive productivity engine designed specifically for university students. Built with cutting-edge web technologies, it consolidates everything you need to stay on top of your academic life into one gorgeous, glassmorphism-inspired dashboard.
 
-Whether you're keeping your attendance safely above the danger zone, tracking your daily study streaks, or organizing your lecture notes, UniCore operates as the central operating system for your degree.
+Whether you're keeping your attendance safely above the danger zone, tracking your daily study streaks, or organizing your lecture notes with markdown, UniCore operates as the central operating system for your degree.
 
 ---
 
-## 📸 Screenshots
+## 🚀 Use it Live!
 
-<details open>
-<summary><b>Click to expand</b></summary>
-<br/>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/dashboard.png" alt="Dashboard" width="800" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/attendance.png" alt="Attendance" width="800" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/notes.png" alt="Notes" width="800" />
-</p>
-</details>
+No need to host or configure databases yourself! UniCore is fully deployed and ready to use. 
+
+👉 **[Visit the Live App on Vercel](https://unicore.vercel.app)** 
+
+Simply create an account and start organizing your semester instantly. Your data is securely isolated using Row Level Security (RLS) in the cloud.
 
 ---
 
@@ -48,12 +44,12 @@ Whether you're keeping your attendance safely above the danger zone, tracking yo
 
 - 📊 **Smart Dashboard**: A bird's-eye view of your day, highlighting urgent tasks and at-risk attendance.
 - 🎓 **Attendance Tracker**: Log theory and lab sessions, track your absence percentage, and know exactly when you're at risk of dropping below the required 75%.
-- 📝 **Markdown Notes**: A rich text editor for your lecture notes with full markdown support and course-based organization.
+- 📝 **Markdown Notes**: A rich text editor for your lecture notes with full markdown support and course-based organization. (Upload images directly into your notes!)
 - ✅ **Task Management (Todos)**: Keep track of assignments and priorities with an intuitive checklist.
 - 🔥 **Habit Streaks**: Build momentum by tracking daily habits (like coding or reading) with visual progress bars.
 - 🎯 **Goal Setting**: Set and track both short-term milestones and long-term ambitions.
-- 📱 **PWA Ready**: Install it directly to your phone's home screen for a seamless, native app-like experience.
-- 🌙 **Dark Mode First**: Because who studies in the light? A gorgeous, glassmorphism-inspired dark UI.
+- 📱 **PWA Ready**: Install it directly to your phone's home screen for a seamless, native app-like experience with swipeable masonry layouts.
+- 🌙 **Dark Mode First**: Because who studies in the light? A gorgeous, glass UI tailored for late-night grinds.
 
 ---
 
@@ -62,43 +58,31 @@ Whether you're keeping your attendance safely above the danger zone, tracking yo
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Components**: [shadcn/ui](https://ui.shadcn.com/) & Base UI
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) & Framer Motion
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Database & Auth**: [Supabase](https://supabase.com/)
-- **State Management**: React Context API
 - **PWA**: [Serwist](https://serwist.build/)
 
 ---
 
-## 🚀 Getting Started
+## 💻 For Developers
 
-To run UniCore locally on your machine:
+Want to contribute or run your own local instance?
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/x19an/UniCore.git
-cd UniCore
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Set up Supabase
-Create a `.env.local` file in the root directory and add your Supabase credentials:
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-*(You will need to run the `schema.sql` file in your Supabase SQL Editor to set up the database tables).*
-
-### 4. Run the development server
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/x19an/UniCore.git
+   cd UniCore
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Run the development server**
+   *(Note: You'll need to configure your own `.env.local` with Supabase keys if you want to test database logic locally, but UI development can be done with mock data if you bypass the auth middleware.)*
+   ```bash
+   npm run dev
+   ```
 
 ---
 
