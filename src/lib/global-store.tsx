@@ -106,7 +106,12 @@ export const GlobalStoreProvider = ({ children }: { children: React.ReactNode })
             setNotes(sanitizedNotes);
           }
           if (coursesData && coursesData.length > 0) setCourses(coursesData);
-          if (sessionsData && sessionsData.length > 0) setSessions(sessionsData);
+          if (sessionsData && sessionsData.length > 0) {
+            setSessions(sessionsData.map((s: Session) => ({ 
+              ...s, 
+              date: s.date.includes('T') ? s.date.split('T')[0] : s.date 
+            })));
+          }
         }
       } catch (err) {
         console.error("Error loading data from Supabase:", err);
@@ -473,7 +478,10 @@ export const GlobalStoreProvider = ({ children }: { children: React.ReactNode })
       if (!user) return;
       const { data } = await supabase.from('sessions').insert({ ...session, user_id: user.id }).select().single();
       if (data) {
-        setSessions(prev => prev.map(s => s.id === tempId ? data : s));
+        setSessions(prev => prev.map(s => s.id === tempId ? { 
+          ...data, 
+          date: data.date.includes('T') ? data.date.split('T')[0] : data.date 
+        } : s));
       }
     } catch (err) {
       console.error("Error adding session:", err);
@@ -530,7 +538,10 @@ export const GlobalStoreProvider = ({ children }: { children: React.ReactNode })
       if (data) {
         setSessions(prev => {
           const nonOptimistic = prev.filter(s => !optimistic.some(o => o.id === s.id));
-          return [...nonOptimistic, ...data];
+          return [...nonOptimistic, ...data.map((d: any) => ({
+            ...d,
+            date: d.date.includes('T') ? d.date.split('T')[0] : d.date
+          }))];
         });
       }
     } catch (err) {
