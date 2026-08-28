@@ -50,7 +50,7 @@ export function DashboardHeader() {
         <BreadcrumbList>
           <BreadcrumbItem className="hidden md:block">
             <BreadcrumbLink render={<Link href="/" />}>
-              Future Helper
+              UniCore
             </BreadcrumbLink>
           </BreadcrumbItem>
           {!isHome && (

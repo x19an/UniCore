@@ -89,7 +89,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <Sparkles className="size-4" />
           </div>
           <div className="flex flex-col min-w-0 group-data-[collapsible=icon]:hidden">
-            <span className="font-semibold text-sm leading-tight truncate">Future Helper</span>
+            <span className="font-semibold text-sm leading-tight truncate">UniCore</span>
             <span className="text-[11px] text-muted-foreground truncate">Student Dashboard</span>
           </div>
         </div>

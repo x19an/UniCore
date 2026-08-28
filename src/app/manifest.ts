@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Future Helper',
-    short_name: 'FutureHelper',
+    name: 'UniCore',
+    short_name: 'UniCore',
     description: 'Your sleek AI-powered future assistant',
     start_url: '/',
     display: 'standalone',

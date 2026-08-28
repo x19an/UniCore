@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Future Helper",
+  title: "UniCore",
   description: "Your sleek AI-powered future assistant",
   appleWebApp: {
     capable: true,
-    title: "Future Helper",
+    title: "UniCore",
     statusBarStyle: "black-translucent",
   },
 };
