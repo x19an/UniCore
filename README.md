@@ -26,6 +26,24 @@ Whether you're keeping your attendance safely above the danger zone, tracking yo
 
 ---
 
+## 📸 Screenshots
+
+<details open>
+<summary><b>Click to expand</b></summary>
+<br/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/dashboard.png" alt="Dashboard" width="800" />
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/attendance.png" alt="Attendance" width="800" />
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/x19an/UniCore/main/public/screenshots/notes.png" alt="Notes" width="800" />
+</p>
+</details>
+
+---
+
 ## ✨ Features
 
 - 📊 **Smart Dashboard**: A bird's-eye view of your day, highlighting urgent tasks and at-risk attendance.
