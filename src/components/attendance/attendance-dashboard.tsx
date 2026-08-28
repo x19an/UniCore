@@ -297,9 +297,9 @@ export function AttendanceDashboard() {
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 px-1 -mx-1">
             {attendanceCourses.length === 0 ? (
-              <div className="col-span-full text-center py-16 text-muted-foreground border rounded-lg border-dashed bg-card/20 space-y-3">
+              <div className="w-full col-span-full text-center py-16 text-muted-foreground border rounded-lg border-dashed bg-card/20 space-y-3 shrink-0">
                 <BookOpen className="h-10 w-10 mx-auto opacity-30" />
                 <div>
                   <h3 className="font-semibold text-foreground">No courses tracked yet</h3>
@@ -313,13 +313,14 @@ export function AttendanceDashboard() {
               </div>
             ) : (
               attendanceCourses.map(course => (
-                <CourseCard
-                  key={course.id}
-                  course={course}
-                  sessions={activeSessions}
-                  onLogSession={handleLogSession}
-                  onDeleteSession={deleteSession}
-                />
+                <div key={course.id} className="snap-center shrink-0 w-[85vw] max-w-[320px] md:w-auto md:max-w-none">
+                  <CourseCard
+                    course={course}
+                    sessions={activeSessions}
+                    onLogSession={handleLogSession}
+                    onDeleteSession={deleteSession}
+                  />
+                </div>
               ))
             )}
           </div>

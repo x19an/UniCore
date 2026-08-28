@@ -13,6 +13,28 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 import { motion, Variants } from 'framer-motion'
+import { useFormStatus } from 'react-dom'
+import { Loader2, Hexagon } from 'lucide-react'
+
+function SubmitButton({ isLogin }: { isLogin: boolean }) {
+  const { pending } = useFormStatus()
+  return (
+    <motion.button
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.98 }}
+      formAction={isLogin ? login : signup}
+      disabled={pending}
+      className={cn(
+        buttonVariants({ variant: isLogin ? 'default' : 'outline' }),
+        'w-full h-11 transition-all',
+        isLogin ? 'shadow-md hover:shadow-lg' : 'border-border/50 bg-background/30 hover:bg-muted/50'
+      )}
+    >
+      {pending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+      {pending ? 'Authenticating...' : isLogin ? 'Log in' : 'Create an account'}
+    </motion.button>
+  )
+}
 
 export default function LoginPage() {
   const containerVariants: Variants = {
@@ -45,18 +67,7 @@ export default function LoginPage() {
           <CardHeader className="space-y-2 text-center pb-6">
             <motion.div variants={itemVariants}>
               <div className="mx-auto w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center mb-4 shadow-inner">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-6 h-6 text-primary"
-                >
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
+                <Hexagon className="w-6 h-6 text-primary fill-primary/20" />
               </div>
               <CardTitle className="text-3xl font-bold tracking-tight">
                 UniCore
@@ -64,7 +75,7 @@ export default function LoginPage() {
             </motion.div>
             <motion.div variants={itemVariants}>
               <CardDescription className="text-sm">
-                Your sleek AI-powered future assistant
+                Log in to access your student dashboard
               </CardDescription>
             </motion.div>
           </CardHeader>
@@ -95,22 +106,8 @@ export default function LoginPage() {
                 />
               </motion.div>
               <motion.div variants={itemVariants} className="flex flex-col gap-3 pt-4">
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  formAction={login}
-                  className={cn(buttonVariants({ variant: 'default' }), 'w-full h-11 shadow-md hover:shadow-lg transition-all')}
-                >
-                  Log in
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  formAction={signup}
-                  className={cn(buttonVariants({ variant: 'outline' }), 'w-full h-11 border-border/50 bg-background/30 hover:bg-muted/50 transition-all')}
-                >
-                  Create an account
-                </motion.button>
+                <SubmitButton isLogin={true} />
+                <SubmitButton isLogin={false} />
               </motion.div>
             </form>
           </CardContent>

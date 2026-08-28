@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
+import { Hexagon } from "lucide-react"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -50,14 +51,16 @@ export function DashboardHeader() {
       <Separator orientation="vertical" className="h-6 mx-2 hidden md:block" />
       
       {/* Mobile Title Centered */}
-      <div className="md:hidden flex items-center justify-center w-full absolute left-0 right-0 pointer-events-none">
+      <div className="md:hidden flex items-center justify-center w-full absolute left-0 right-0 pointer-events-none gap-2">
+        <Hexagon className="w-5 h-5 text-primary fill-primary/20" />
         <span className="font-bold text-lg tracking-tight">UniCore</span>
       </div>
 
       <Breadcrumb className="hidden md:flex">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink render={<Link href="/" />}>
+            <BreadcrumbLink render={<Link href="/" className="flex items-center gap-1.5" />}>
+              <Hexagon className="w-4 h-4 text-primary fill-primary/20" />
               UniCore
             </BreadcrumbLink>
           </BreadcrumbItem>

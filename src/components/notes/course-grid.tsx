@@ -183,16 +183,17 @@ export function CourseGrid({
               Courses ({filteredCourses.length})
             </h2>
             {filteredCourses.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 px-1 -mx-1">
                 {filteredCourses.map((course) => (
-                  <CourseCard
-                    key={course.id}
-                    course={course}
-                    notes={notes}
-                    onSelectCourse={onSelectCourse}
-                    onEditCourse={onEditCourse}
-                    onDeleteCourse={onDeleteCourse}
-                  />
+                  <div key={course.id} className="snap-center shrink-0 w-[85vw] max-w-[320px] md:w-auto md:max-w-none">
+                    <CourseCard
+                      course={course}
+                      notes={notes}
+                      onSelectCourse={onSelectCourse}
+                      onEditCourse={onEditCourse}
+                      onDeleteCourse={onDeleteCourse}
+                    />
+                  </div>
                 ))}
               </div>
             ) : (
@@ -252,16 +253,17 @@ export function CourseGrid({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 px-1 -mx-1">
             {activeCourses.map((course) => (
-              <CourseCard
-                key={course.id}
-                course={course}
-                notes={notes}
-                onSelectCourse={onSelectCourse}
-                onEditCourse={onEditCourse}
-                onDeleteCourse={onDeleteCourse}
-              />
+              <div key={course.id} className="snap-center shrink-0 w-[85vw] max-w-[320px] md:w-auto md:max-w-none h-full">
+                <CourseCard
+                  course={course}
+                  notes={notes}
+                  onSelectCourse={onSelectCourse}
+                  onEditCourse={onEditCourse}
+                  onDeleteCourse={onDeleteCourse}
+                />
+              </div>
             ))}
           </div>
         </div>
