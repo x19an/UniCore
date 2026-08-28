@@ -61,7 +61,7 @@ export function CourseCard({
         {/* Accent top gradient line */}
         <div className="h-1.5 w-full bg-gradient-to-r from-primary/80 via-primary/40 to-transparent group-hover:from-primary group-hover:via-primary/70 group-hover:to-primary/30 transition-all duration-300" />
 
-        <CardHeader className="p-5 pb-3">
+        <CardHeader className="p-4 pb-2 md:p-5 md:pb-3">
           <div className="flex items-start justify-between gap-2">
             <div className="space-y-1 flex-1 min-w-0">
               <div className="flex items-center gap-2">
@@ -108,7 +108,7 @@ export function CourseCard({
           </div>
         </CardHeader>
 
-        <CardContent className="p-5 pt-0 space-y-3">
+        <CardContent className="p-4 pt-0 md:p-5 md:pt-0 space-y-3">
           {latestNote ? (
             <div className="p-3 rounded-lg bg-muted/40 border border-border/50 space-y-1.5 text-xs">
               <div className="flex items-center justify-between text-muted-foreground">
@@ -142,7 +142,7 @@ export function CourseCard({
           )}
         </CardContent>
 
-        <CardFooter className="p-5 pt-2 border-t border-border/60 flex items-center justify-between bg-muted/10">
+        <CardFooter className="p-4 pt-2 md:p-5 md:pt-2 border-t border-border/60 flex items-center justify-between bg-muted/10">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <FileText className="w-3.5 h-3.5 text-primary" />
             <span className="font-semibold text-foreground">{noteCount}</span>

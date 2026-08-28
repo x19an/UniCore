@@ -52,8 +52,8 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
 
   return (
     <Card className="flex flex-col h-full bg-card/60 backdrop-blur-sm border-border/60 hover:border-border transition-colors shadow-sm">
-      <CardHeader className="pb-3">
-        <div className="flex justify-between items-start gap-2">
+      <CardHeader className="p-3 pb-2 md:p-6 md:pb-3">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-2">
           <div className="space-y-1 min-w-0 flex-1">
             <div className="flex items-center gap-1.5 flex-wrap">
               {course.code && (
@@ -89,7 +89,7 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 space-y-4 pt-1">
+      <CardContent className="flex-1 space-y-3 p-3 pt-0 md:p-6 md:pt-1">
         {/* Attendance Progress */}
         <div className="space-y-2">
           <div className="flex justify-between items-center text-xs">
@@ -126,8 +126,8 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
         {/* Today's Schedule & Quick Action */}
         {isScheduledToday && (
           <div className="pt-2 border-t border-border/40 space-y-2">
-            <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
-              <span>Today&apos;s Class ({todayDayName} - {todayPeriodsCount} {todayPeriodsCount > 1 ? "Periods" : "Period"})</span>
+            <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground pb-1">
+              <span>Today ({todayDayName} - {todayPeriodsCount} {todayPeriodsCount > 1 ? "Per." : "Per."})</span>
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -144,12 +144,12 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
                       Period {periodNum}
                     </span>
 
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-0.5 md:gap-1">
                       <Button
                         type="button"
                         size="sm"
                         variant={existing?.status === "attended" ? "default" : "outline"}
-                        className={`h-6 text-[10px] px-2 gap-1 ${
+                        className={`h-6 text-[10px] px-1 md:px-2 gap-0.5 md:gap-1 ${
                           existing?.status === "attended"
                             ? "bg-emerald-600 hover:bg-emerald-700 text-white border-transparent"
                             : "hover:bg-emerald-500/10 hover:text-emerald-500"
@@ -163,21 +163,21 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
                         type="button"
                         size="sm"
                         variant={existing?.status === "missed" ? "destructive" : "outline"}
-                        className={`h-6 text-[10px] px-2 gap-1 ${
+                        className={`h-6 text-[10px] px-1 md:px-2 gap-0.5 md:gap-1 ${
                           existing?.status === "missed"
                             ? "bg-destructive text-destructive-foreground border-transparent"
                             : "hover:bg-destructive/10 hover:text-destructive"
                         }`}
                         onClick={() => onLogSession(course.id, todayDateStr, "missed", periodNum)}
                       >
-                        <X className="h-3 w-3" /> Absent
+                        <X className="h-3 w-3" /> <span className="hidden sm:inline">Absent</span>
                       </Button>
 
                       <Button
                         type="button"
                         size="sm"
                         variant={existing?.status === "cancelled" ? "secondary" : "ghost"}
-                        className={`h-6 text-[10px] px-1.5 ${
+                        className={`h-6 text-[10px] px-1 md:px-1.5 ${
                           existing?.status === "cancelled"
                             ? "bg-secondary text-secondary-foreground"
                             : "text-muted-foreground hover:text-foreground"
@@ -196,7 +196,7 @@ export function CourseCard({ course, sessions, onLogSession, onDeleteSession }: 
         )}
       </CardContent>
 
-      <CardFooter className="pt-3 border-t border-border/50">
+      <CardFooter className="p-3 pt-3 md:p-6 md:pt-4 border-t border-border/50">
         <LogSessionDialog
           course={course}
           sessions={sessions}
