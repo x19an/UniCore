@@ -9,7 +9,7 @@
   </p>
 
   <p>
-    <a href="https://unicore.vercel.app"><img src="https://img.shields.io/badge/Live_App-Visit_Now-000000?style=for-the-badge&logo=vercel" alt="Live App" /></a>
+    <a href="https://uni-core-pink.vercel.app/"><img src="https://img.shields.io/badge/Live_App-Visit_Now-000000?style=for-the-badge&logo=vercel" alt="Live App" /></a>
   </p>
 
   <p>
@@ -55,7 +55,7 @@ Whether you're keeping your attendance safely above the danger zone, tracking yo
 
 No need to host or configure databases yourself! UniCore is fully deployed and ready to use. 
 
-👉 **[Visit the Live App on Vercel](https://unicore.vercel.app)** 
+👉 **[Visit the Live App on Vercel](https://uni-core-pink.vercel.app/)** 
 
 Simply create an account and start organizing your semester instantly. Your data is securely isolated using Row Level Security (RLS) in the cloud.
 
